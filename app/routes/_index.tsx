@@ -17,6 +17,7 @@ export default function Index() {
       <Button className="mt-2 text-white dark:text-[#3d3d3d] bg-[#5d5d5d] dark:bg-[#f6f6f6]"
         variant={"outline"}
       >
+        <h2>prueba commit</h2>
         <GiClick />
         Apachurrame
       </Button>
