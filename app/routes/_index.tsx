@@ -1,5 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Button } from "~/components/ui/button"
+import { GiClick } from "react-icons/gi";
+
 
 export const meta: MetaFunction = () => {
   return [
@@ -15,6 +17,7 @@ export default function Index() {
       <Button className="mt-2 text-white dark:text-[#3d3d3d] bg-[#5d5d5d] dark:bg-[#f6f6f6]"
         variant={"outline"}
       >
+        <GiClick />
         Apachurrame
       </Button>
     </div>
