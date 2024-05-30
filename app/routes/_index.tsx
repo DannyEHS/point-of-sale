@@ -1,7 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Button } from "~/components/ui/button"
 import { GiClick } from "react-icons/gi";
-import Sidebar from '~/components/ui/Navigation/sideBar'
 import { Fragment } from "react/jsx-runtime";
 
 export const meta: MetaFunction = () => {
@@ -16,7 +15,7 @@ export default function Index() {
 
 
       <Fragment>
-        <h1 className="texttext-[#3d3d3d] dark:text-white">Welcome to the Hell</h1>
+        <h1 className="text-[#3d3d3d] dark:text-white">Welcome to the Hell</h1>
         <Button className="mt-2 text-white dark:text-[#3d3d3d] bg-[#5d5d5d] dark:bg-[#f6f6f6]"
           variant={"outline"}
         >
