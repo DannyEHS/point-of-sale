@@ -20,6 +20,7 @@ export default function Index() {
           variant={"outline"}
         >
           <h2>prueba commit</h2>
+          <h2>prueba commit erik</h2>
           <GiClick />
           Apachurrame
         </Button>
