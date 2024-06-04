@@ -34,12 +34,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  //return <Outlet />;
   return(
     <div className="grid min-h-screen grid-cols-5">
     <Sidebar/>
     
-    <div className="relative flex flex-col items-center justify-center text-6xl w-full h-screen bg-[#f6f6f6] dark:bg-[#252525] col-span-4 flex-1">
+    <div className="relative flex flex-col bg-[#f6f6f6] dark:bg-[#252525] col-span-4">
       <Outlet />
     </div>
   </div>
