@@ -22,11 +22,11 @@ export default function Index() {
   return (
     <div className="m-3 items-center justify-start h-screen w-full">
 
-      <h1 className="mb-3 text-xl text-[#3d3d3d] dark:text-white">Welcome to administration</h1>
+      <h1 className="mb-3 text-xl text-[#3d3d3d] dark:text-white">Administracion</h1>
 
       <div className="grid ">
         <div className="grid grid-cols-3 gap-4 justify-center items-center p-2">
-          <Link to="/">
+          <Link to="/admin/users">
             <CardTopic
               textTitle="Usuarios"
               textDescription="Aqui das de alta nuevos usuarios."
@@ -99,7 +99,5 @@ export default function Index() {
         </div>
       </div>
     </div>
-
-
   );
 }
