@@ -41,7 +41,7 @@ const usersData = [
 
 export default function TableUsers() {
     return (
-        <Table>
+        <Table className="border border-[#d1d1d1]">
             <TableCaption>Lista de tus Usuarios.</TableCaption>
             <TableHeader>
                 <TableRow>
@@ -52,6 +52,7 @@ export default function TableUsers() {
                     <TableHead>Email</TableHead>
                     <TableHead>Clave</TableHead>
                     <TableHead>Rol</TableHead>
+                    <TableHead>Accion</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
