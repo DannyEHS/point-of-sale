@@ -56,7 +56,7 @@ export default function Index() {
               iconFooter={<FaArrowUpRightFromSquare className="mr-3" />}
             />
           </Link>
-          <Link to="/">
+          <Link to="/admin/rol">
             <CardTopic
               textTitle="Roles y Permisos"
               textDescription="Aqui generas tus niveles de seguridad."

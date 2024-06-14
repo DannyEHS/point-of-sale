@@ -11,12 +11,12 @@ import {
 import { IoMdHelpCircleOutline } from "react-icons/io";
 
 
-export default function FromCreateUser() {
+export default function FromCreateRol() {
     return (
         <>
             <Form className="flex flex-col items-center bg-[#fafbfb] dark:bg-[#252525] w-9/12">
                 <div className="flex flex-row">
-                    <Input className=" w-96 m-3 " placeholder="Nombre completo" />
+                    <Input className=" w-96 m-3 " placeholder="Rol del empleado" />
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger asChild>
@@ -25,13 +25,13 @@ export default function FromCreateUser() {
                                 </p>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>Aqui ingresas el nombre del Usuario</p>
+                                <p>Aqui ingresas el nombre del Rol</p>
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>
                 </div>
                 <div className="flex flex-row">
-                    <Input className=" w-96 m-3 " placeholder="Apellido Paterno" />
+                    <Input className=" w-96 m-3 " placeholder="Descripcion" />
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger asChild>
@@ -40,13 +40,13 @@ export default function FromCreateUser() {
                                 </p>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>Aqui ingresas el apellido paterno del usuario</p>
+                                <p>Redacta una descripcion breve que hable sobre la funcion del rol dentro de la organizacion.</p>
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>
                 </div>
                 <div className="flex flex-row">
-                    <Input className=" w-96 m-3 " placeholder="Apellido Materno" />
+                    <Input className=" w-96 m-3 " placeholder="Ingresa un valor para el rol" />
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger asChild>
@@ -55,67 +55,7 @@ export default function FromCreateUser() {
                                 </p>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>Aqui ingresas el apellido materno del usuario.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                </div>
-                <div className="flex flex-row">
-                    <Input className=" w-96 m-3 " placeholder="ejemplo@gmail.com" />
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <p>
-                                    <IoMdHelpCircleOutline />
-                                </p>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Aqui debes ingresas el correo electronico del usuario.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                </div>
-                <div className="flex flex-row">
-                    <Input className=" w-96 m-3 " placeholder="Password" />
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <p>
-                                    <IoMdHelpCircleOutline />
-                                </p>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>El nuevo usuario debe ingresar su clave, debe ser secreta.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                </div>
-                <div className="flex flex-row">
-                    <Input className=" w-96 m-3 " placeholder="Confirmar Password" />
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <p>
-                                    <IoMdHelpCircleOutline />
-                                </p>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>La clave debe ser identica al campo anterior para poder validarla.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                </div>
-                <div className="flex flex-row">
-                    <SelectItems itemsText="xxxxxxxxxx" />
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <p>
-                                    <IoMdHelpCircleOutline />
-                                </p>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Selecciona el rol que tendra el usuario dentro de la organizacion.</p>
+                                <p>El valor que le des al rol dependera de cuantos roles quieras tener, el numero mas grande implica que tiene mas libertades en el manejo del sistema.</p>
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>
@@ -124,12 +64,12 @@ export default function FromCreateUser() {
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger asChild>
-                                <Link to="/admin/users">
+                                <Link to="/admin/rol">
                                     <Button type="submit">Regresar</Button>
                                 </Link>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>Presiona el boton para regresar al listado de Usuarios.</p>
+                                <p>Presiona el boton para regresar al listado de Roles.</p>
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>
@@ -139,7 +79,7 @@ export default function FromCreateUser() {
                                 <Button type="submit">Crear</Button>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>Si los campos estan completos, puedes crear tu usuario al presionar este boton.</p>
+                                <p>Si los campos estan completos, puedes crear tu rol al presionar este boton.</p>
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>
