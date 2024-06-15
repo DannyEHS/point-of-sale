@@ -9,11 +9,16 @@ import {
     TableRow,
 } from "~/components/ui/table"
 
+import { Link } from "@remix-run/react";
+import DeleteButton from "../../general/DeleteButton";
+import EditButton from "../../general/EditButton";
+import TooltipInfo from "../../general/TooltipInfo"
+
 type Props = {
     data: string | any
 }
 
-export default function TableRol({ data } : Props) {
+export default function TableRol({ data }: Props) {
     return (
         <Table className="border border-[#d1d1d1]">
             <TableCaption>Lista de tus Roles.</TableCaption>
@@ -31,17 +36,26 @@ export default function TableRol({ data } : Props) {
                         <TableCell className="font-medium">{rol.id}</TableCell>
                         <TableCell>{rol.name}</TableCell>
                         <TableCell>{rol.description}</TableCell>
-                        <TableCell></TableCell>
+                        <TableCell className="flex flex-row space-x-2">
+                            <TooltipInfo
+                                element={<EditButton route="/" />}
+                                text="Editar rol"
+                            />
+                            <TooltipInfo
+                                element={<DeleteButton />}
+                                text="Eliminar rol"
+                            />
+                        </TableCell>
                     </TableRow>
                 ))}
                 {
                     !data ? (
                         <TableRow >
-                        <TableCell className="font-medium">Any data</TableCell>
-                        <TableCell>Any data</TableCell>
-                        <TableCell>Any data</TableCell>
-                        <TableCell>Any data</TableCell>
-                    </TableRow>
+                            <TableCell className="font-medium">Any data</TableCell>
+                            <TableCell>Any data</TableCell>
+                            <TableCell>Any data</TableCell>
+                            <TableCell>Any data</TableCell>
+                        </TableRow>
                     ) : null
                 }
             </TableBody>
