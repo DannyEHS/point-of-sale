@@ -1,6 +1,7 @@
 import { Form, Link } from "@remix-run/react";
 import { Input } from "~/components/ui/input"
 import { Button } from "~/components/ui/button"
+import { Textarea } from "~/components/ui/textarea"
 import SelectItems from "~/components/ui/admin/SelectItems"
 import {
     Tooltip,
@@ -10,13 +11,12 @@ import {
 } from "~/components/ui/tooltip"
 import { IoMdHelpCircleOutline } from "react-icons/io";
 
-
 export default function FromCreateUser() {
     return (
         <>
-            <Form className="flex flex-col items-center bg-[#fafbfb] dark:bg-[#252525] w-9/12">
+            <Form method="post" className="flex flex-col items-center bg-[#fafbfb] dark:bg-[#252525] w-9/12">
                 <div className="flex flex-row items-center">
-                    <Input className=" w-96 m-3 " placeholder="Nombre completo" />
+                    <Input name="name" className=" w-96 m-3 " placeholder="Nombre para el rol" />
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger asChild>
@@ -25,13 +25,13 @@ export default function FromCreateUser() {
                                 </p>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>Aqui ingresas el nombre del Usuario</p>
+                                <p>Aqui ingresas el nombre del rol administrativo que tenga tu organizacion</p>
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>
                 </div>
                 <div className="flex flex-row items-center">
-                    <Input className=" w-96 m-3 " placeholder="Apellido Paterno" />
+                    <Textarea name="description" className=" w-96 m-3 " placeholder="Ingresa un breve descripcion" />
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger asChild>
@@ -40,82 +40,7 @@ export default function FromCreateUser() {
                                 </p>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p>Aqui ingresas el apellido paterno del usuario</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                </div>
-                <div className="flex flex-row items-center">
-                    <Input className=" w-96 m-3 " placeholder="Apellido Materno" />
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <p>
-                                    <IoMdHelpCircleOutline />
-                                </p>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Aqui ingresas el apellido materno del usuario.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                </div>
-                <div className="flex flex-row items-center">
-                    <Input className=" w-96 m-3 " placeholder="ejemplo@gmail.com" />
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <p>
-                                    <IoMdHelpCircleOutline />
-                                </p>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Aqui debes ingresas el correo electronico del usuario.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                </div>
-                <div className="flex flex-row items-center">
-                    <Input className=" w-96 m-3 " placeholder="Password" />
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <p>
-                                    <IoMdHelpCircleOutline />
-                                </p>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>El nuevo usuario debe ingresar su clave, debe ser secreta.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                </div>
-                <div className="flex flex-row items-center">
-                    <Input className=" w-96 m-3 " placeholder="Confirmar Password" />
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <p>
-                                    <IoMdHelpCircleOutline />
-                                </p>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>La clave debe ser identica al campo anterior para poder validarla.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                </div>
-                <div className="flex flex-row items-center">
-                    <SelectItems itemsText="xxxxxxxxxx" />
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <p>
-                                    <IoMdHelpCircleOutline />
-                                </p>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Selecciona el rol que tendra el usuario dentro de la organizacion.</p>
+                                <p>Aqui ingresa una descripcion que haga referencia al rol que desees crear.</p>
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>
