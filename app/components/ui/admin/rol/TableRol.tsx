@@ -38,7 +38,7 @@ export default function TableRol({ data }: Props) {
                         <TableCell>{rol.description}</TableCell>
                         <TableCell className="flex flex-row space-x-2">
                             <TooltipInfo
-                                element={<EditButton route="/" />}
+                                element={<EditButton route="/editRol" />}
                                 text="Editar rol"
                             />
                             <TooltipInfo

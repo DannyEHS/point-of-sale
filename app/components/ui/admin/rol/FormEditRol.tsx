@@ -3,15 +3,9 @@ import { Input } from "~/components/ui/input"
 import { Button } from "~/components/ui/button"
 import { Textarea } from "~/components/ui/textarea"
 import TooltipInfo from "~/components/ui/general/TooltipInfo"
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "~/components/ui/tooltip"
 import { IoMdHelpCircleOutline } from "react-icons/io";
 
-export default function FromCreateRol() {
+export default function FromEditRol() {
     return (
         <>
             <Form method="post" className="flex flex-col items-center bg-[#fafbfb] dark:bg-[#252525] w-9/12">
@@ -40,7 +34,7 @@ export default function FromCreateRol() {
                     />
                     <TooltipInfo
                         element={
-                            <Button type="submit">Crear</Button>
+                            <Button type="submit">Editar</Button>
                         }
                         text="Si los campos estan completos, puedes crear tu usuario al presionar este boton."
                     />
