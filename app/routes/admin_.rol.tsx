@@ -1,9 +1,10 @@
 import { Input } from "~/components/ui/input"
 import { Button } from "~/components/ui/button"
 import TableRol from '~/components/ui/admin/rol/TableRol'
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, redirect, useLoaderData } from "@remix-run/react";
 
 import prisma from "../../prisma/prisma";
+import { deleteRol } from "~/models/deleteRol";
 
 export const loader = async () => {
     const roles = await prisma.rol.findMany()
@@ -12,6 +13,25 @@ export const loader = async () => {
         roles
     }
 }
+
+export const action = async ({ request }: ActionArgs) => {
+    try {
+        const formData = await request.formData();
+        const id = formData.get("id");
+
+        if (!id || typeof id !== "string") {
+            throw new Error("ID inválido para el rol a eliminar");
+        }
+
+        const deleteData = await deleteRol(id);
+        console.log("Data del rol eliminado: ", deleteData);
+
+        return redirect("/admin/rol");
+    } catch (error) {
+        console.error(`Error en la acción de eliminación del rol:`, error);
+        throw new Error(`Error al eliminar el rol`);
+    }
+};
 
 export default function Rol() {
 
