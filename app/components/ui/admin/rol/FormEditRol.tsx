@@ -1,23 +1,30 @@
-import { Form, Link } from "@remix-run/react";
-import { Input } from "~/components/ui/input"
+import { Form, Link, useLoaderData } from "@remix-run/react";
+import InputUpdate from "../../general/InputUpdate";
+import TextAreaUpdate from "../../general/TextAreaUpdate";
 import { Button } from "~/components/ui/button"
-import { Textarea } from "~/components/ui/textarea"
 import TooltipInfo from "~/components/ui/general/TooltipInfo"
 import { IoMdHelpCircleOutline } from "react-icons/io";
 
-export default function FromEditRol() {
+type Props = {
+    data: any
+    nameInput: string
+    nameTextArea: string
+}
+
+export default function FromEditRol({ data, nameInput, nameTextArea } : Props) {
+
     return (
         <>
             <Form method="post" className="flex flex-col items-center bg-[#fafbfb] dark:bg-[#252525] w-9/12">
                 <div className="flex flex-row items-center">
-                    <Input name="name" className=" w-96 m-3 " placeholder="Nombre para el rol" />
+                    <InputUpdate name={nameInput} value={data?.name} className=" w-96 m-3 " placeholder="Nombre para el rol" />
                     <TooltipInfo
                         element={<IoMdHelpCircleOutline />}
                         text="Aqui ingresas el nombre del rol administrativo que tenga tu organizacion"
                     />
                 </div>
                 <div className="flex flex-row items-center">
-                    <Textarea name="description" className=" w-96 m-3 " placeholder="Ingresa un breve descripcion" />
+                    <TextAreaUpdate name={nameTextArea} value={data?.description} className=" w-96 m-3 " placeholder="Ingresa un breve descripcion" />
                     <TooltipInfo
                         element={<IoMdHelpCircleOutline />}
                         text="Aqui ingresa una descripcion que haga referencia al rol que desees crear."
