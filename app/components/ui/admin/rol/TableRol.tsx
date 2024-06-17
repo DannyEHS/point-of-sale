@@ -9,10 +9,10 @@ import {
     TableRow,
 } from "~/components/ui/table"
 
-import { Link } from "@remix-run/react";
 import DeleteButton from "../../general/DeleteButton";
 import EditButton from "../../general/EditButton";
 import TooltipInfo from "../../general/TooltipInfo"
+import { Form } from "@remix-run/react";
 
 type Props = {
     data: string | any
@@ -42,7 +42,12 @@ export default function TableRol({ data }: Props) {
                                 text="Editar rol"
                             />
                             <TooltipInfo
-                                element={<DeleteButton />}
+                                element={
+                                    <Form method="post">
+                                        <DeleteButton catchId={rol.id} />
+                                    </Form>
+                                    
+                                }
                                 text="Eliminar rol"
                             />
                         </TableCell>
