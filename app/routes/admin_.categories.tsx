@@ -12,7 +12,7 @@ export default function Categories() {
             </h1>
             <div className="flex flex-row w-full items-center space-x-2">
                 <Input className="w-96" placeholder="Buscar categoria" />
-                <Link to="/">
+                <Link to="/createCategory">
                     <Button>Crear Categoria</Button>
                 </Link>
             </div>
