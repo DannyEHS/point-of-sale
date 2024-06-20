@@ -46,7 +46,7 @@ export default function Index() {
               iconFooter={<FaArrowUpRightFromSquare className="mr-3" />}
             />
           </Link>
-          <Link to="/">
+          <Link to="/admin/categories">
             <CardTopic
               textTitle="Categorias"
               textDescription="Aqui das de alta nuevas categorias."
