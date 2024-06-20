@@ -36,7 +36,7 @@ export default function Index() {
               iconFooter={<FaArrowUpRightFromSquare className="mr-3" />}
             />
           </Link>
-          <Link to="/">
+          <Link to="/admin/products">
             <CardTopic
               textTitle="Productos"
               textDescription="Aqui das de alta nuevos productos."

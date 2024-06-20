@@ -1,0 +1,76 @@
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableFooter,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "~/components/ui/table"
+
+import DeleteButton from "../../general/DeleteButton";
+import EditButton from "../../general/EditButton";
+import TooltipInfo from "../../general/TooltipInfo"
+import { Form } from "@remix-run/react";
+
+type Props = {
+    data?: string | any
+}
+
+export default function TableProducts({ data }: Props) {
+    return (
+        <Table className="border border-[#d1d1d1]">
+            <TableCaption>Lista de tus Productos.</TableCaption>
+            <TableHeader>
+                <TableRow>
+                    <TableHead>Cod. Barras</TableHead>
+                    <TableHead>Producto</TableHead>
+                    <TableHead>Categoria</TableHead>
+                    <TableHead>Precio</TableHead>
+                    <TableHead>Costo</TableHead>
+                    <TableHead>Stock</TableHead>
+                </TableRow>
+            </TableHeader>
+            <TableBody>
+                {data && data.map((product: any) => (
+                    <TableRow key={product.id}>
+                        <TableCell className="font-medium">{product.barCode}</TableCell>
+                        <TableCell>{product.name}</TableCell>
+                        <TableCell>{product.category}</TableCell>
+                        <TableCell>{product.price}</TableCell>
+                        <TableCell>{product.cost}</TableCell>
+                        <TableCell>{product.stock}</TableCell>
+                        <TableCell className="flex flex-row space-x-2">
+                            <TooltipInfo
+                                element={<EditButton route={`/editRol/${product.id}`} />}
+                                text="Editar producto"
+                            />
+                            <TooltipInfo
+                                element={
+                                    <Form method="post">
+                                        <DeleteButton catchId={product.id} />
+                                    </Form>
+                                    
+                                }
+                                text="Eliminar producto"
+                            />
+                        </TableCell>
+                    </TableRow>
+                ))}
+                {
+                    !data ? (
+                        <TableRow >
+                            <TableCell className="font-medium">Any data</TableCell>
+                            <TableCell>Any data</TableCell>
+                            <TableCell>Any data</TableCell>
+                            <TableCell>Any data</TableCell>
+                            <TableCell>Any data</TableCell>
+                            <TableCell>Any data</TableCell>
+                        </TableRow>
+                    ) : null
+                }
+            </TableBody>
+        </Table>
+    )
+}
