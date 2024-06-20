@@ -29,7 +29,7 @@ model Category {
   id                String      @id @default(cuid())
   name              String
   description       String?
-  product           Product[]  // Relation 1 - n Products
+  products          Product[]  // Relation 1 - n Products
 }
 
 model Rol {
