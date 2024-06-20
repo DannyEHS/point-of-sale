@@ -29,6 +29,12 @@ export default function FromCreateRol() {
                         text="Aqui ingresa una descripcion que haga referencia al rol que desees crear."
                     />
                 </div>
+                <div className="flex flex-row items-center justify-between">
+                    <div className="flex flex-row items-center">
+                        <h1 className="text-2xl">Prioridad del Nivel</h1>
+                        <Button className="ml-80">Agregar Nivel</Button>
+                    </div>                    
+                </div>
                 <div className="flex flex-row space-x-3 m-3 items-center">
                     <TooltipInfo
                         element={

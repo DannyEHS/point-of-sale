@@ -13,6 +13,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Product {
+  id                String      @id @default(cuid())
+  barCode           String
+  name              String
+  price             String
+  cost              String
+  stock             String
+  description       String
+  id_category       String     
+  category          Category @relation(fields: [id_category], references: [id])
+}
+
+model Category {
+  id                String      @id @default(cuid())
+  name              String
+  description       String?
+  product           Product[]  // Relation 1 - n Products
+}
+
 model Rol {
   id          String @id @default(cuid())
   name        String
