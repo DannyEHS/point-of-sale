@@ -37,7 +37,7 @@ export default function TableProducts({ data }: Props) {
                     <TableRow key={product.id}>
                         <TableCell className="font-medium">{product.barCode}</TableCell>
                         <TableCell>{product.name}</TableCell>
-                        <TableCell>{product.category}</TableCell>
+                        <TableCell>{product.category?.name}</TableCell>
                         <TableCell>{product.price}</TableCell>
                         <TableCell>{product.cost}</TableCell>
                         <TableCell>{product.stock}</TableCell>

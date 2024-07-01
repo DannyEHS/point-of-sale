@@ -4,23 +4,33 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "~/components/ui/select"
+} from "~/components/ui/select";
 
 type Props = {
-    itemsText: string,
-}
+    data?: {
+        id: string;
+        name: string;
+    }[];
+    placeHolder: string;
+    name: string;
+};
 
-export default function SelectItems({ itemsText } : Props) {
+export default function SelectItems({ data, placeHolder, name }: Props) {
     return (
-        <Select>
+        <Select name={name}>
             <SelectTrigger className="w-96 m-3">
-                <SelectValue placeholder="Rol" />
+                <SelectValue placeholder={placeHolder} />
             </SelectTrigger>
             <SelectContent>
-                <SelectItem value="light">{itemsText}</SelectItem>
-                <SelectItem value="dark">{itemsText}</SelectItem>
-                <SelectItem value="system">{itemsText}</SelectItem>
+                {data && data.map((category) => (
+                    <SelectItem key={category.id} value={category.id}>
+                        {category.name}
+                    </SelectItem>
+                ))}
+                {!data && (
+                    <SelectItem value="Sin info">Sin info</SelectItem>
+                )}
             </SelectContent>
         </Select>
-    )
+    );
 }
