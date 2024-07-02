@@ -1,8 +1,9 @@
 import { Input } from "~/components/ui/input"
 import { Button } from "~/components/ui/button"
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, redirect, useLoaderData } from "@remix-run/react";
 import TableProducts from "~/components/ui/admin/products/TableProducts";
 import prisma from "prisma/prisma";
+import { deleteProduct } from "~/models/products/deleteProduct";
 
 export const loader = async () => {
     const categories = await prisma.category.findMany();
@@ -15,6 +16,24 @@ export const loader = async () => {
     console.log(productsAndCategories)
     return{
         products: productsAndCategories
+    }
+}
+
+export const action = async ({ request }: ActionArgs) => {
+    try{
+        const formData = await request.formData();
+        const id = formData.get("id");
+
+        if (!id || typeof id !== "string") {
+            throw new Error("ID inválido para el rol a eliminar");
+        }
+
+        const deleteData = await deleteProduct(id)
+        console.log("Data del rol eliminado: ", deleteData);
+        return redirect("/admin/products");
+    } catch (error) {
+        console.error(`Error en la acción de eliminación del producto:`, error);
+        throw new Error(`Error al eliminar el producto`);
     }
 }
 
