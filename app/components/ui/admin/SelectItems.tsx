@@ -12,12 +12,15 @@ type Props = {
         name: string;
     }[];
     placeHolder: string;
-    name: string;
+    name?: string | any;
+    value?: string;
 };
 
-export default function SelectItems({ data, placeHolder, name }: Props) {
+export default function SelectItems({ data, placeHolder, name, value }: Props) {
+
+    
     return (
-        <Select name={name}>
+        <Select name={name} value={value}>
             <SelectTrigger className="w-96 m-3">
                 <SelectValue placeholder={placeHolder} />
             </SelectTrigger>

@@ -43,7 +43,7 @@ export default function TableProducts({ data }: Props) {
                         <TableCell>{product.stock}</TableCell>
                         <TableCell className="flex flex-row space-x-2">
                             <TooltipInfo
-                                element={<EditButton route={`/editRol/${product.id}`} />}
+                                element={<EditButton route={`/editProduct/${product.id}`} />}
                                 text="Editar producto"
                             />
                             <TooltipInfo

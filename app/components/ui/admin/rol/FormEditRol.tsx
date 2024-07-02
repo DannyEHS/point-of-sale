@@ -43,7 +43,7 @@ export default function FromEditRol({ data, nameInput, nameTextArea } : Props) {
                         element={
                             <Button type="submit">Editar</Button>
                         }
-                        text="Si los campos estan completos, puedes crear tu usuario al presionar este boton."
+                        text="Si los campos estan completos, puedes editar tu rol al presionar este boton."
                     />
                 </div>
             </Form>
