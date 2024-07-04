@@ -43,7 +43,8 @@ export default function Products() {
     const { products } = useLoaderData<typeof loader>();
 
     return(
-        <div className="m-3 items-center justify-start h-screen w-full space-y-4">
+        <div className="items-center justify-start h-screen w-full ">
+            <div className="m-3 space-y-4">
             <h1 className="mb-3 text-xl text-[#3d3d3d] dark:text-white">
                 Productos
             </h1>
@@ -56,6 +57,8 @@ export default function Products() {
             <div className="flex flex-col items-center justify-center">
                 <TableProducts data={products}/>
             </div>
+            </div>
+            
         </div>
     )
 }

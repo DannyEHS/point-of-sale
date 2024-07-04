@@ -35,10 +35,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return(
-    <div className="grid min-h-screen grid-cols-5">
+    <div className="flex flex-row min-h-screen ">
     <Sidebar/>
     
-    <div className="relative flex flex-col bg-[#f6f6f6] dark:bg-[#252525] col-span-4">
+    <div className="flex-1 bg-[#f6f6f6] dark:bg-[#252525]">
       <Outlet />
     </div>
   </div>
