@@ -6,7 +6,7 @@ import { IconComponent } from '../icon'
 
 export default function SideBar() {
     return (
-        <aside className="flex flex-col items-center justify-center bg-[#fafbfb] border-r bg-gray-100/40 lg:block dark:bg-gray-800/40">
+        <aside className="flex flex-col w-44 items-center justify-center bg-[#fafbfb] border-r bg-gray-100/40 lg:block dark:bg-gray-800/40">
             <div className='flex h-[60px] items-center border-b px-6'>
                 <Link className='flex items-center gap-2 font-semibold' key='/' to='/'>
                     {/* Icono */}
