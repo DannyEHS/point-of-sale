@@ -3,18 +3,22 @@ import FormCreateRol from '~/components/ui/admin/rol/FormCreateRol'
 import { createRol } from "~/models/createRol"
 
 export const action = async ({ request }: ActionArgs) => {
-
     const formData = await request.formData();
-    const name = await formData.get("name")
-    const description = await formData.get("description")
+    const name = formData.get("name");
+    const description = formData.get("description");
+    const routes = formData.getAll("routes"); // Obtener todos los valores de los checkboxes
 
-    if(!name) throw new Error("Ingresa el nombre del rol.")
-    if(!description) throw new Error("Ingresa una descripcion para el rol.")
+    if (!name) throw new Error("Ingresa el nombre del rol.");
+    if (!description) throw new Error("Ingresa una descripcion para el rol.");
+
+    // Unir las rutas seleccionadas en un solo string
+    const routesString = routes.join(',');
 
     const newRol = await createRol({
         name,
-        description
-    })
+        description,
+        routes: routesString,
+    });
 
     console.log("Data del rol: ", newRol);
 

@@ -27,15 +27,21 @@ export default function TableRol({ data }: Props) {
                     <TableHead className="w-[100px]">ID</TableHead>
                     <TableHead>Rol</TableHead>
                     <TableHead>Descripcion</TableHead>
+                    <TableHead>Rutas</TableHead>
                     <TableHead>Accion</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
                 {data && data.map((rol: any) => (
                     <TableRow key={rol.id}>
-                        <TableCell className="font-medium">{rol.id}</TableCell>
+                        <TableCell className="font-medium">{rol.id.substring(0, 10)}</TableCell>
                         <TableCell>{rol.name}</TableCell>
                         <TableCell>{rol.description}</TableCell>
+                        <TableCell>
+                            {rol.routes.split(', ').map((route: string, index: number) => (
+                                <span key={index}> {route.trim()} </span>
+                            ))}
+                        </TableCell>
                         <TableCell className="flex flex-row space-x-2">
                             <TooltipInfo
                                 element={<EditButton route={`/editRol/${rol.id}`} />}
@@ -46,7 +52,7 @@ export default function TableRol({ data }: Props) {
                                     <Form method="post">
                                         <DeleteButton catchId={rol.id} />
                                     </Form>
-                                    
+
                                 }
                                 text="Eliminar rol"
                             />
