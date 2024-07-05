@@ -24,7 +24,7 @@ export default function TableCategories({ data }: Props) {
             <TableCaption>Lista de tus Categorias.</TableCaption>
             <TableHeader>
                 <TableRow>
-                    <TableHead className="w-60">ID</TableHead>
+                    <TableHead className="w-10">ID</TableHead>
                     <TableHead>Categoria</TableHead>
                     <TableHead className="w-96">Descripcion</TableHead>
                     <TableHead>Accion</TableHead>
@@ -33,7 +33,7 @@ export default function TableCategories({ data }: Props) {
             <TableBody>
                 {data && data.map((rol: any) => (
                     <TableRow key={rol.id}>
-                        <TableCell className="font-medium">{rol.id}</TableCell>
+                        <TableCell className="font-medium">{rol.id.substring(0, 10)}</TableCell>
                         <TableCell>{rol.name}</TableCell>
                         <TableCell>{rol.description}</TableCell>
                         <TableCell className="flex flex-row space-x-2">

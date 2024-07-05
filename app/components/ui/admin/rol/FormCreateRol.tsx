@@ -10,30 +10,36 @@ import {
     TooltipTrigger,
 } from "~/components/ui/tooltip"
 import { IoMdHelpCircleOutline } from "react-icons/io";
+import CheckBoxRoutes from "./CheckBoxRoutes";
 
 export default function FromCreateRol() {
     return (
         <>
             <Form method="post" className="flex flex-col items-center bg-[#fafbfb] dark:bg-[#252525] w-9/12">
-                <div className="flex flex-row items-center">
-                    <Input name="name" className=" w-96 m-3 " placeholder="Nombre para el rol" />
-                    <TooltipInfo
-                        element={<IoMdHelpCircleOutline />}
-                        text="Aqui ingresas el nombre del rol administrativo que tenga tu organizacion"
-                    />
-                </div>
-                <div className="flex flex-row items-center">
-                    <Textarea name="description" className=" w-96 m-3 " placeholder="Ingresa un breve descripcion" />
-                    <TooltipInfo
-                        element={<IoMdHelpCircleOutline />}
-                        text="Aqui ingresa una descripcion que haga referencia al rol que desees crear."
-                    />
-                </div>
-                <div className="flex flex-row items-center justify-between">
-                    <div className="flex flex-row items-center">
-                        <h1 className="text-2xl">Prioridad del Nivel</h1>
-                        <Button className="ml-80">Agregar Nivel</Button>
-                    </div>                    
+                <div className="flex flex-row space-x-8 items-center">
+                    <div className="flex flex-col items-center">
+                        <div className="flex flex-row items-center">
+                            <Input name="name" className=" w-96 m-3 " placeholder="Nombre para el rol" />
+                            <TooltipInfo
+                                element={<IoMdHelpCircleOutline />}
+                                text="Aqui ingresas el nombre del rol administrativo que tenga tu organizacion"
+                            />
+                        </div>
+                        <div className="flex flex-row items-center">
+                            <Textarea name="description" className=" w-96 m-3 " placeholder="Ingresa un breve descripcion" />
+                            <TooltipInfo
+                                element={<IoMdHelpCircleOutline />}
+                                text="Aqui ingresa una descripcion que haga referencia al rol que desees crear."
+                            />
+                        </div>
+                    </div>
+                    <div className="flex flex-col space-y-2">
+                        <CheckBoxRoutes text="Dashboard" name="dashboard" />
+                        <CheckBoxRoutes text="POS" name="pos" />
+                        <CheckBoxRoutes text="Inventario" name="inventario" />
+                        <CheckBoxRoutes text="Administracion" name="administracion" />
+                    </div>
+
                 </div>
                 <div className="flex flex-row space-x-3 m-3 items-center">
                     <TooltipInfo
