@@ -16,6 +16,3 @@ export default function CheckBoxRoutes({ text, name }: Props) {
         </div>
     )
 }
-
-
-
