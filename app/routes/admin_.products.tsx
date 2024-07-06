@@ -12,15 +12,15 @@ export const loader = async () => {
             category: true,
         },
     });
-    
+
     console.log(productsAndCategories)
-    return{
+    return {
         products: productsAndCategories
     }
 }
 
 export const action = async ({ request }: ActionArgs) => {
-    try{
+    try {
         const formData = await request.formData();
         const id = formData.get("id");
 
@@ -42,23 +42,23 @@ export default function Products() {
 
     const { products } = useLoaderData<typeof loader>();
 
-    return(
+    return (
         <div className="items-center justify-start h-screen w-full ">
             <div className="m-3 space-y-4">
-            <h1 className="mb-3 text-xl text-[#3d3d3d] dark:text-white">
-                Productos
-            </h1>
-            <div className="flex flex-row w-full items-center space-x-2">
-                <Input className="w-96" placeholder="Buscar usuario" />
-                <Link to="/createProducts">
-                    <Button>Crear Producto</Button>
-                </Link>
+                <h1 className="mb-3 text-xl text-[#3d3d3d] dark:text-white">
+                    Productos
+                </h1>
+                <div className="flex flex-row w-full items-center space-x-2">
+                    <Input className="w-96" placeholder="Buscar usuario" />
+                    <Link to="/createProducts">
+                        <Button>Crear Producto</Button>
+                    </Link>
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                    <TableProducts data={products} />
+                </div>
             </div>
-            <div className="flex flex-col items-center justify-center">
-                <TableProducts data={products}/>
-            </div>
-            </div>
-            
+
         </div>
     )
 }
