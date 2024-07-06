@@ -24,7 +24,7 @@ export default function TableCategories({ data }: Props) {
             <TableCaption>Lista de tus Categorias.</TableCaption>
             <TableHeader>
                 <TableRow>
-                    <TableHead className="w-10">ID</TableHead>
+                    <TableHead className="font-medium w-10">ID</TableHead>
                     <TableHead>Categoria</TableHead>
                     <TableHead className="w-96">Descripcion</TableHead>
                     <TableHead>Accion</TableHead>
