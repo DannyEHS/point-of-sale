@@ -1,4 +1,5 @@
 import prisma from "../../prisma/prisma";
+import { rolValidation } from "~/validations/roles/rolSchema";
 
 export const createRol = async (data: {
   name: string;
@@ -6,6 +7,7 @@ export const createRol = async (data: {
   routes: string;
 }) => {
   try {
+    rolValidation.parse(data);
     const newRol = await prisma.rol.create({
       data: {
         name: data.name,

@@ -1,3 +1,4 @@
+import { updateCategoryValidation } from "~/validations/categories/updateCategorySchema";
 import prisma from "../../../prisma/prisma";
 
 export const updateCategory = async (data: {
@@ -15,6 +16,7 @@ export const updateCategory = async (data: {
   }[];
 }) => {
   try {
+    updateCategoryValidation.parse(data);
     const updatedCategory = await prisma.category.update({
       where: { id: data.id },
       data: {

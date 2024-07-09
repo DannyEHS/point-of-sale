@@ -1,4 +1,5 @@
 import prisma from "../../../prisma/prisma";
+import { categoryValidation } from "~/validations/categories/categorySchema";
 
 export const createCategory = async (data: {
   name: string;
@@ -13,6 +14,7 @@ export const createCategory = async (data: {
   }[];
 }) => {
   try {
+    categoryValidation.parse(data);
     const newCategory = await prisma.category.create({
       data: {
         name: data.name,
