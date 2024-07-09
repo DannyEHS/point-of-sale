@@ -31,20 +31,20 @@ export default function TableCategories({ data }: Props) {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {data && data.map((rol: any) => (
-                    <TableRow key={rol.id}>
-                        <TableCell className="font-medium">{rol.id.substring(0, 10)}</TableCell>
-                        <TableCell>{rol.name}</TableCell>
-                        <TableCell>{rol.description}</TableCell>
+                {data && data.map((category: any) => (
+                    <TableRow key={category.id}>
+                        <TableCell className="font-medium">{category.id.substring(0, 10)}</TableCell>
+                        <TableCell>{category.name}</TableCell>
+                        <TableCell>{category.description}</TableCell>
                         <TableCell className="flex flex-row space-x-2">
                             <TooltipInfo
-                                element={<EditButton route={`/editRol/${rol.id}`} />}
+                                element={<EditButton route={`/editCategory/${category.id}`} />}
                                 text="Editar categoria"
                             />
                             <TooltipInfo
                                 element={
                                     <Form method="post">
-                                        <DeleteButton catchId={rol.id} />
+                                        <DeleteButton catchId={category.id} />
                                     </Form>
                                     
                                 }
