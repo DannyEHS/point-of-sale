@@ -1,4 +1,4 @@
-import { userSchema } from "~/validations/userSchema";
+import { userValidation } from "~/validations/users/userSchema";
 import prisma from "../../../prisma/prisma";
 
 export const createUser = async (data: {
@@ -9,7 +9,7 @@ export const createUser = async (data: {
   rol: string;
 }) => {
   try {
-    userSchema.parse(data);
+    userValidation.parse(data);
     const newUser = await prisma.user.create({
       data: {
         name: data.name,

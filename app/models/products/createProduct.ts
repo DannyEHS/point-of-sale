@@ -1,3 +1,4 @@
+import { productValidation } from "~/validations/products/productSchema";
 import prisma from "../../../prisma/prisma";
 
 export const createProduct = async (data: {
@@ -10,6 +11,7 @@ export const createProduct = async (data: {
   category: string;
 }) => {
   try {
+    productValidation.parse(data);
     const newProduct = await prisma.product.create({
       data: {
         category: {

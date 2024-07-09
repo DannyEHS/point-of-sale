@@ -1,3 +1,4 @@
+import { updateRolValidation } from "~/validations/roles/updateRolSchema";
 import prisma from "../../prisma/prisma";
 
 export const updateRol = async (data: {
@@ -6,6 +7,7 @@ export const updateRol = async (data: {
     description: string;
 }) => {
     try {
+        updateRolValidation.parse(data);
         const updateRol = await prisma.rol.update({
             where: { id: data.id },
             data: {
