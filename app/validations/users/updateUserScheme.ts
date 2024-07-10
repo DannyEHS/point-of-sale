@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-export const updateUserSchema = z.object({
+export const updateUserValidation = z.object({
   id: z.string({
     required_error: "El ID del usuario es requerido.",
     invalid_type_error: "El ID debe ser una cadena.",
