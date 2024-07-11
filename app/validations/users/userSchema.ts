@@ -31,7 +31,7 @@ export const userValidation = z.object({
     .regex(/[A-Za-z0-9]/, {
       message: "La clave debe contener al menos una letra y un número.",
     }),
-  rolId: z
+  rol: z
     .string({
       required_error: "El rol del usuario es requerido.",
       invalid_type_error: "El rol debe ser una cadena.",

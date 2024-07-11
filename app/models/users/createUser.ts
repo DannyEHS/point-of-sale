@@ -1,3 +1,4 @@
+// ~/models/users/createUser.ts
 import { userValidation } from "~/validations/users/userSchema";
 import prisma from "../../../prisma/prisma";
 

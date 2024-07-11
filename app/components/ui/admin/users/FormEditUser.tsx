@@ -46,7 +46,7 @@ export default function FromCreateRol({ data, rolData, nameInput, nameSelect }: 
                     />
                 </div>
                 <div className="flex flex-row items-center">
-                    <InputUpdate type="password" name={nameInput.password} value={data.password} type="password" className=" w-96 m-3 " placeholder="Clave" />
+                    <InputUpdate type="password" name={nameInput.password} value={data.password} className=" w-96 m-3 " placeholder="Clave" />
                     <TooltipInfo
                         element={<IoMdHelpCircleOutline />}
                         text="Aqui actualizas la clave de acceso del usuario/empleado"
