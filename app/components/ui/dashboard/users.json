@@ -1,0 +1,39 @@
+{
+    "Table":{
+        "TableHeader":[
+
+            {
+                "id": "ID",
+                "Name": "Name",
+                "Type": "Role",
+                "Rows": [
+                    {
+                        "id": 1,
+                        "Name": "Juan",
+                        "Type": "Manager"
+                    },
+                    {
+                        "id": 2,
+                        "Name": "Pedro",
+                        "Type": "Cashier"
+                    },
+                    {
+                        "id": 3,
+                        "Name": "Maria",
+                        "Type": "Inventory"
+                    },
+                    {
+                        "id": 4,
+                        "Name": "Fer",
+                        "Type": "Manager"
+                    },
+                    {
+                        "id": 5,
+                        "Name": "Daniel",
+                        "Type": "Admin"
+                    }
+                ]
+            }
+        ]
+    }
+}
