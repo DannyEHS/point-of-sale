@@ -1,0 +1,32 @@
+{
+    "Inventory":{
+        "TableHeader":[
+
+            {
+                "id": "ID",
+                "Name": "Product",
+                "Type": "Stock",
+                "Rows": [
+                    {
+                        "id": 1,
+                        "img": "https://github.com/shadcn.png",
+                        "Name": "T-shirt",
+                        "Type": "1"
+                    },
+                    {
+                        "id": 2,
+                        "img": "https://github.com/shadcn.png",
+                        "Name": "Tennis",
+                        "Type": "7"
+                    },
+                    {
+                        "id": 3,
+                        "img": "https://github.com/shadcn.png",
+                        "Name": "Jacket",
+                        "Type": "0"
+                    }
+                ]
+            }
+        ]
+    }
+}

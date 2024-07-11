@@ -14,7 +14,7 @@ export default function SideBar() {
                 </Link>
                 <Button className='ml-auto' variant='outline'>---</Button>
             </div>
-            <ul className="flex flex-col px-4 pt-4 text-sm font-medium">
+            <ul className="sticky top-16 z-50 flex flex-col px-4 pt-4 text-sm font-medium">
                 {routes.map((route) => (
                     <li key={route.path} className="flex items-center gap-3 ">
                         
