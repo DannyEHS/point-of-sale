@@ -1,18 +1,15 @@
-import { Input } from "~/components/ui/input"
-import { Button } from "~/components/ui/button"
-import TableRol from '~/components/ui/admin/rol/TableRol'
-import { Link, redirect, useLoaderData } from "@remix-run/react";
-
+import React, { useState } from "react";
+import { Input } from "~/components/ui/input";
+import { Button } from "~/components/ui/button";
+import TableRol from '~/components/ui/admin/rol/TableRol';
+import { Link, useLoaderData } from "@remix-run/react";
 import prisma from "../../prisma/prisma";
 import { deleteRol } from "~/models/deleteRol";
 
 export const loader = async () => {
-    const roles = await prisma.rol.findMany()
-    console.log(roles)
-    return {
-        roles
-    }
-}
+    const roles = await prisma.rol.findMany();
+    return { roles };
+};
 
 export const action = async ({ request }: ActionArgs) => {
     try {
@@ -24,8 +21,6 @@ export const action = async ({ request }: ActionArgs) => {
         }
 
         const deleteData = await deleteRol(id);
-        console.log("Data del rol eliminado: ", deleteData);
-
         return redirect("/admin/rol");
     } catch (error) {
         console.error(`Error en la acción de eliminación del rol:`, error);
@@ -34,23 +29,30 @@ export const action = async ({ request }: ActionArgs) => {
 };
 
 export default function Rol() {
-
     const { roles } = useLoaderData<typeof loader>();
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const filteredRoles = roles.filter((rol) =>
+        rol.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <div className="items-center justify-start h-screen w-full">
             <div className="m-3 space-y-4">
-                <h1 className="mb-3 text-xl text-[#3d3d3d] dark:text-white">
-                    Roles
-                </h1>
+                <h1 className="mb-3 text-xl text-[#3d3d3d] dark:text-white">Roles</h1>
                 <div className="flex flex-row w-full items-center space-x-2">
-                    <Input className="w-96" placeholder="Buscar usuario" />
+                    <Input
+                        className="w-96"
+                        placeholder="Buscar rol"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
                     <Link to="/createRol">
                         <Button>Apachurrame</Button>
                     </Link>
                 </div>
                 <div className="flex flex-col items-center justify-center">
-                    <TableRol data={roles} />
+                    <TableRol data={filteredRoles} />
                 </div>
             </div>
         </div>

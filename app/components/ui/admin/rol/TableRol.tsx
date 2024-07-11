@@ -3,20 +3,18 @@ import {
     TableBody,
     TableCaption,
     TableCell,
-    TableFooter,
     TableHead,
     TableHeader,
     TableRow,
-} from "~/components/ui/table"
-
+} from "~/components/ui/table";
 import DeleteButton from "../../general/DeleteButton";
 import EditButton from "../../general/EditButton";
-import TooltipInfo from "../../general/TooltipInfo"
+import TooltipInfo from "../../general/TooltipInfo";
 import { Form } from "@remix-run/react";
 
 type Props = {
-    data: string | any
-}
+    data: any[];
+};
 
 export default function TableRol({ data }: Props) {
     return (
@@ -26,13 +24,13 @@ export default function TableRol({ data }: Props) {
                 <TableRow>
                     <TableHead className="font-medium w-10">ID</TableHead>
                     <TableHead>Rol</TableHead>
-                    <TableHead>Descripcion</TableHead>
+                    <TableHead>Descripción</TableHead>
                     <TableHead>Rutas</TableHead>
-                    <TableHead>Accion</TableHead>
+                    <TableHead>Acción</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {data && data.map((rol: any) => (
+                {data.map((rol) => (
                     <TableRow key={rol.id}>
                         <TableCell className="font-medium w-10">{rol.id.substring(0, 10)}</TableCell>
                         <TableCell>{rol.name}</TableCell>
@@ -52,24 +50,20 @@ export default function TableRol({ data }: Props) {
                                     <Form method="post">
                                         <DeleteButton catchId={rol.id} />
                                     </Form>
-
                                 }
                                 text="Eliminar rol"
                             />
                         </TableCell>
                     </TableRow>
                 ))}
-                {
-                    !data ? (
-                        <TableRow >
-                            <TableCell className="font-medium">Any data</TableCell>
-                            <TableCell>Any data</TableCell>
-                            <TableCell>Any data</TableCell>
-                            <TableCell>Any data</TableCell>
-                        </TableRow>
-                    ) : null
-                }
+                {data.length === 0 && (
+                    <TableRow>
+                        <TableCell colSpan={5} className="text-center">
+                            No hay roles que coincidan con la búsqueda.
+                        </TableCell>
+                    </TableRow>
+                )}
             </TableBody>
         </Table>
-    )
+    );
 }
