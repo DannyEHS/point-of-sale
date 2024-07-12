@@ -9,6 +9,7 @@ import { LuMonitorSmartphone } from "react-icons/lu";
 import { LiaBarcodeSolid } from "react-icons/lia";
 
 import { Link } from "@remix-run/react";
+import TooltipInfo from "~/components/ui/general/TooltipInfo";
 
 
 export const meta: MetaFunction = () => {
@@ -27,43 +28,64 @@ export default function Index() {
       <div className="grid ">
         <div className="grid grid-cols-3 gap-4 justify-center items-center p-2">
           <Link to="/admin/users">
-            <CardTopic
-              textTitle="Usuarios"
-              textDescription="Aqui das de alta nuevos usuarios."
-              texContent="Manejo de Usuarios"
-              textFooter="Administración de usuarios"
-              iconContent={<FaRegUser className="mr-3" />}
-              iconFooter={<FaArrowUpRightFromSquare className="mr-3" />}
+            <TooltipInfo
+              element={
+                <CardTopic
+                  textTitle="Usuarios"
+                  textDescription="Aqui das de alta nuevos usuarios."
+                  texContent="Manejo de Usuarios"
+                  textFooter="Administrador de usuarios"
+                  iconContent={<FaRegUser className="mr-3" />}
+                  iconFooter={<FaArrowUpRightFromSquare className="mr-3" />}
+                />
+              }
+              text="Aqui puedes crear, editar, buscar y eliminar tus usuarios."
             />
           </Link>
           <Link to="/admin/products">
-            <CardTopic
-              textTitle="Productos"
-              textDescription="Aqui das de alta nuevos productos."
-              texContent="Manejo de Productos"
-              textFooter="Agregar nuevo producto"
-              iconContent={<CiBoxes className="mr-3" />}
-              iconFooter={<FaArrowUpRightFromSquare className="mr-3" />}
+            <TooltipInfo
+              element={
+                <CardTopic
+                  textTitle="Productos"
+                  textDescription="Aqui das de alta nuevos productos."
+                  texContent="Manejo de Productos"
+                  textFooter="Administrador de productos"
+                  iconContent={<CiBoxes className="mr-3" />}
+                  iconFooter={<FaArrowUpRightFromSquare className="mr-3" />}
+                />
+              }
+              text="Aqui puedes crear, editar, buscar y eliminar tus productos."
             />
           </Link>
           <Link to="/admin/categories">
-            <CardTopic
-              textTitle="Categorias"
-              textDescription="Aqui das de alta nuevas categorias."
-              texContent="Manejo de Categorias"
-              textFooter="Agregar nueva categoria"
-              iconContent={<MdOutlineCategory className="mr-3" />}
-              iconFooter={<FaArrowUpRightFromSquare className="mr-3" />}
+            <TooltipInfo
+              element={
+                <CardTopic
+                  textTitle="Categorias"
+                  textDescription="Aqui das de alta nuevas categorias."
+                  texContent="Manejo de Categorias"
+                  textFooter="Administrador de categorias"
+                  iconContent={<MdOutlineCategory className="mr-3" />}
+                  iconFooter={<FaArrowUpRightFromSquare className="mr-3" />}
+                />
+              }
+              text="Aqui puedes crear, editar, buscar y eliminar tus categorias."
             />
           </Link>
           <Link to="/admin/rol">
-            <CardTopic
-              textTitle="Roles y Permisos"
-              textDescription="Aqui generas tus niveles de seguridad."
-              texContent="Manejo de Roles"
-              textFooter="Agregar nuevo rol"
-              iconContent={<MdOutlineSecurity className="mr-3" />}
-              iconFooter={<FaArrowUpRightFromSquare className="mr-3" />}
+
+            <TooltipInfo
+              element={
+                <CardTopic
+                  textTitle="Roles y Permisos"
+                  textDescription="Aqui generas tus niveles de seguridad."
+                  texContent="Manejo de Roles"
+                  textFooter="Administrador de roles"
+                  iconContent={<MdOutlineSecurity className="mr-3" />}
+                  iconFooter={<FaArrowUpRightFromSquare className="mr-3" />}
+                />
+              }
+              text="Aqui puedes crear, editar, buscar y eliminar tus roles, ademas de otorgarles permisos sobre la aplicacion."
             />
           </Link>
           <Link to="/">
