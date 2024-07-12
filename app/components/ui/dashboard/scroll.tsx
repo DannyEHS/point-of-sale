@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { ScrollArea } from "~/components/ui/dashboard/scrollArea"
+import { ScrollArea } from "~/components/ui/general/scrollArea"
 
 
 const tags = Array.from({ length: 50 }).map(
