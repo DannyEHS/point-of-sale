@@ -9,7 +9,7 @@ import { BarChartComponent } from "~/components/ui/dashboard/barChart";
 import {ScatterChartComponent } from "~/components/ui/dashboard/scatterChart";
 import {LineChartComponent } from "~/components/ui/dashboard/lineChart";
 import {ScrollAreaDemo} from "~/components/ui/dashboard/scroll";
-import { ScrollArea } from "~/components/ui/dashboard/scrollArea";
+import { ScrollArea } from "~/components/ui/general/scrollArea";
 import TableCard from "~/components/ui/dashboard/tableCard";
 import {Table} from "~/components/ui/dashboard/users.json";
 import {Productos} from "~/components/ui/dashboard/productos.json";
