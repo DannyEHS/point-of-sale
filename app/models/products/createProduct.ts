@@ -11,6 +11,7 @@ export const createProduct = async (data: {
   category: string;
 }) => {
   try {
+    console.log("Datos de entrada:", data);
     productValidation.parse(data);
     const newProduct = await prisma.product.create({
       data: {
@@ -28,7 +29,8 @@ export const createProduct = async (data: {
       },
     });
     return newProduct;
-  } catch (error) {
-    throw new Error("Error al crear producto.");
+  } catch (error: any) {
+    console.error("Error al crear producto:", error);
+    throw new Error(error.message || "Error al crear producto.");
   }
 };

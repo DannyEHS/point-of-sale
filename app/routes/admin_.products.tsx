@@ -5,6 +5,8 @@ import TableProducts from "~/components/ui/admin/products/TableProducts";
 import prisma from "prisma/prisma";
 import { deleteProduct } from "~/models/products/deleteProduct";
 
+import useFilterProducts from "~/hooks/products/useFilterProduct";
+
 export const loader = async () => {
     const categories = await prisma.category.findMany();
     const productsAndCategories = await prisma.product.findMany({
@@ -41,6 +43,7 @@ export const action = async ({ request }: ActionArgs) => {
 export default function Products() {
 
     const { products } = useLoaderData<typeof loader>();
+    const { searchTerm, setSearchTerm, filteredProducts } = useFilterProducts(products)
 
     return (
         <div className="items-center justify-start h-screen w-full ">
@@ -49,13 +52,18 @@ export default function Products() {
                     Productos
                 </h1>
                 <div className="flex flex-row w-full items-center space-x-2">
-                    <Input className="w-96" placeholder="Buscar usuario" />
+                    <Input 
+                        className="w-96" 
+                        placeholder="Buscar productos" 
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
                     <Link to="/createProducts">
                         <Button>Crear Producto</Button>
                     </Link>
                 </div>
                 <div className="flex flex-col items-center justify-center">
-                    <TableProducts data={products} />
+                    <TableProducts data={filteredProducts} />
                 </div>
             </div>
 

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
 import TableRol from '~/components/ui/admin/rol/TableRol';
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, redirect, useLoaderData } from "@remix-run/react";
 import prisma from "../../prisma/prisma";
 import { deleteRol } from "~/models/deleteRol";
+
+import useFilteredRoles from "~/hooks/roles/useFilterRol"
 
 export const loader = async () => {
     const roles = await prisma.rol.findMany();
@@ -30,11 +32,7 @@ export const action = async ({ request }: ActionArgs) => {
 
 export default function Rol() {
     const { roles } = useLoaderData<typeof loader>();
-    const [searchTerm, setSearchTerm] = useState("");
-
-    const filteredRoles = roles.filter((rol) =>
-        rol.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const { searchTerm, setSearchTerm, filteredRoles } = useFilteredRoles(roles);
 
     return (
         <div className="items-center justify-start h-screen w-full">

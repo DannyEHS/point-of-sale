@@ -58,18 +58,13 @@ export default function TableProducts({ data }: Props) {
                         </TableCell>
                     </TableRow>
                 ))}
-                {
-                    !data ? (
-                        <TableRow >
-                            <TableCell className="font-medium">Any data</TableCell>
-                            <TableCell>Any data</TableCell>
-                            <TableCell>Any data</TableCell>
-                            <TableCell>Any data</TableCell>
-                            <TableCell>Any data</TableCell>
-                            <TableCell>Any data</TableCell>
-                        </TableRow>
-                    ) : null
-                }
+                {data.length === 0 && (
+                    <TableRow>
+                        <TableCell colSpan={6} className="text-center">
+                            No hay productos que coincidan con la búsqueda.
+                        </TableCell>
+                    </TableRow>
+                )}
             </TableBody>
         </Table>
     )

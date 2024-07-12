@@ -6,6 +6,8 @@ import { Link, redirect, useLoaderData } from "@remix-run/react";
 import prisma from "prisma/prisma";
 import { deleteUser } from "~/models/users/deleteUser";
 
+import useFilterUsers from "~/hooks/users/useFilterUser";
+
 export const loader = async () => {
     const roles = await prisma.rol.findMany();
     const usersAndRoles = await prisma.user.findMany({
@@ -41,6 +43,7 @@ export const action = async ({request}: ActionArgs) => {
 export default function Users() {
 
     const { users } = useLoaderData<typeof loader>();
+    const { searchTerm, setSearchTerm, filteredUser } = useFilterUsers(users)
 
     return (
         <div className="items-center justify-start h-screen w-full">
@@ -49,13 +52,18 @@ export default function Users() {
                     Usuarios
                 </h1>
                 <div className="flex flex-row w-full items-center space-x-2">
-                    <Input className="w-96" placeholder="Buscar usuario" />
+                    <Input 
+                        className="w-96" 
+                        placeholder="Buscar usuario" 
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
                     <Link to="/createUser">
                         <Button>Crear usuario</Button>
                     </Link>
                 </div>
                 <div className="flex flex-col items-center justify-center">
-                    <TableUsers data={users}/>
+                    <TableUsers data={filteredUser}/>
                 </div>
             </div>
         </div>

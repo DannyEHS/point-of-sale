@@ -71,7 +71,7 @@ export default function FromCreateProduct({ categoryData } : Props) {
                 <div className="flex flex-row space-x-3 m-3 items-center">
                     <TooltipInfo
                         element={
-                            <Link to="/admin/categories">
+                            <Link to="/admin/products">
                                 <Button>Regresar</Button>
                             </Link>
                         }

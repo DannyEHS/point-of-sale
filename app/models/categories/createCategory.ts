@@ -14,6 +14,7 @@ export const createCategory = async (data: {
   }[];
 }) => {
   try {
+    console.log("Datos de entrada:", data);
     categoryValidation.parse(data);
     const newCategory = await prisma.category.create({
       data: {
@@ -28,7 +29,8 @@ export const createCategory = async (data: {
       },
     });
     return newCategory;
-  } catch (error) {
-    throw new Error("No se creó la categoría");
+  } catch (error: any) {
+    console.error("Error al crear categoria:", error);
+    throw new Error(error.message || "Error al crear categoria.");
   }
 };
