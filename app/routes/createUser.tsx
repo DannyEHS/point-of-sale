@@ -4,6 +4,9 @@ import prisma from "../../prisma/prisma"
 import { useLoaderData } from '@remix-run/react'
 import { createUser } from '~/models/users/createUser'
 
+import { RiUserAddLine } from "react-icons/ri";
+
+
 export const loader = async () => {
     const roles = await prisma.rol.findMany()
     console.log(roles)
@@ -46,8 +49,9 @@ export default function Users() {
     return (
         <div className="items-center justify-center h-screen w-full">
             <div className="m-3 space-y-4">
-                <h1 className="mb-3 text-2xl text-[#3d3d3d] dark:text-white">
-                    Crear Usuarios
+                <h1 className="flex flex-row items-end mb-3 text-2xl text-[#252525] dark:text-white">
+                    <RiUserAddLine className="text-[#5a6e8a] mr-1 w-8 h-8"/>
+                    Crear usuarios
                 </h1>
                 <FormCreateUser rolData={rolesId}/>
             </div>

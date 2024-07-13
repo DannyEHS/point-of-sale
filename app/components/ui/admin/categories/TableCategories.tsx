@@ -23,16 +23,16 @@ export default function TableCategories({ data }: Props) {
         <Table className="border border-[#d1d1d1]">
             <TableCaption>Lista de tus Categorias.</TableCaption>
             <TableHeader>
-                <TableRow>
+                <TableRow className="bg-[#d4dae3]">
                     <TableHead className="font-medium w-10">ID</TableHead>
-                    <TableHead>Categoria</TableHead>
+                    <TableHead className="w-24">Categoria</TableHead>
                     <TableHead className="w-96">Descripcion</TableHead>
-                    <TableHead>Accion</TableHead>
+                    <TableHead className="w-16">Accion</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
                 {data && data.map((category: any) => (
-                    <TableRow key={category.id}>
+                    <TableRow className="bg-[#ebeef3]" key={category.id}>
                         <TableCell className="font-medium">{category.id.substring(0, 10)}</TableCell>
                         <TableCell>{category.name}</TableCell>
                         <TableCell>{category.description}</TableCell>

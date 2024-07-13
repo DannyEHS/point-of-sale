@@ -1,7 +1,8 @@
 import { Button } from "~/components/ui/button"
 import { Link } from "@remix-run/react";
 
-import { CiEdit } from "react-icons/ci";
+import { RiDraftLine } from "react-icons/ri";
+
 
 type Props = {
     route: string;
@@ -10,8 +11,8 @@ type Props = {
 export default function EditButton({ route } : Props) {
     return (
         <Link to={route}>
-            <Button className="bg-[#007BFF] hover:bg-[#0A74DA]">
-                <CiEdit />
+            <Button className="bg-[#ff9800] hover:bg-[#fb8c00]">
+            <RiDraftLine className="w-5 h-5"/>
             </Button>
 
         </Link>

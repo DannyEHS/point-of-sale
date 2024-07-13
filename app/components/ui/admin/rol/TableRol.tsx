@@ -21,7 +21,7 @@ export default function TableRol({ data }: Props) {
         <Table className="border border-[#d1d1d1]">
             <TableCaption>Lista de tus Roles.</TableCaption>
             <TableHeader>
-                <TableRow>
+                <TableRow className="bg-[#d4dae3]">
                     <TableHead className="font-medium w-10">ID</TableHead>
                     <TableHead>Rol</TableHead>
                     <TableHead>Descripción</TableHead>
@@ -31,7 +31,7 @@ export default function TableRol({ data }: Props) {
             </TableHeader>
             <TableBody>
                 {data.map((rol) => (
-                    <TableRow key={rol.id}>
+                    <TableRow className="bg-[#ebeef3]" key={rol.id}>
                         <TableCell className="font-medium w-10">{rol.id.substring(0, 10)}</TableCell>
                         <TableCell>{rol.name}</TableCell>
                         <TableCell>{rol.description}</TableCell>
