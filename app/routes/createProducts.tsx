@@ -4,6 +4,9 @@ import prisma from "../../prisma/prisma"
 import { useLoaderData } from "@remix-run/react"
 import { createProduct } from "~/models/products/createProduct"
 
+import { RiAddCircleLine } from "react-icons/ri";
+
+
 
 export const loader = async () => {
     const categories = await prisma.category.findMany()
@@ -52,7 +55,8 @@ export default function CreateProduct() {
 
     return (
         <div className="m-3 items-center justify-center h-screen w-full space-y-4">
-            <h1 className="mb-3 text-2xl text-[#3d3d3d] dark:text-white">
+            <h1 className="flex flex-row items-end mb-3 text-2xl text-[#252525] dark:text-white">
+                <RiAddCircleLine className="text-[#5a6e8a] mr-1 w-8 h-8"/>
                 Crear Producto
             </h1>
             <FormCreateProduct categoryData={categoryIds} />

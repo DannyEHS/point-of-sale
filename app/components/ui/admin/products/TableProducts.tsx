@@ -23,18 +23,19 @@ export default function TableProducts({ data }: Props) {
         <Table className="border border-[#d1d1d1]">
             <TableCaption>Lista de tus Productos.</TableCaption>
             <TableHeader>
-                <TableRow>
+                <TableRow className="bg-[#d4dae3]">
                     <TableHead>Cod. Barras</TableHead>
                     <TableHead>Producto</TableHead>
                     <TableHead>Categoria</TableHead>
                     <TableHead>Precio</TableHead>
                     <TableHead>Costo</TableHead>
                     <TableHead>Stock</TableHead>
+                    <TableHead>Accion</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
                 {data && data.map((product: any) => (
-                    <TableRow key={product.id}>
+                    <TableRow className="bg-[#ebeef3]" key={product.id}>
                         <TableCell className="font-medium">{product.barCode}</TableCell>
                         <TableCell>{product.name}</TableCell>
                         <TableCell>{product.category?.name}</TableCell>

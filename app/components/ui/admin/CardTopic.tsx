@@ -16,9 +16,9 @@ type Props = {
 
 export default function CardTopic({ textTitle, textFooter, iconContent, iconFooter }: Readonly<Props>) {
     return (
-        <Card className="h-auto w-72 ">
+        <Card className="bg-[#ebeef3] h-auto w-72 ">
             <CardHeader>
-                <div className="flex flex-row items-center">
+                <div className="flex flex-row justify-start items-end">
                     {iconContent}
                     <CardTitle>{textTitle}</CardTitle>
                 </div>

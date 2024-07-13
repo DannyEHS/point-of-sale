@@ -22,7 +22,7 @@ export default function TableUsers({ data }: Props) {
         <Table className="border border-[#d1d1d1]">
             <TableCaption>Lista de tus Usuarios.</TableCaption>
             <TableHeader>
-                <TableRow>
+                <TableRow className="bg-[#d4dae3]">
                     <TableHead className="font-medium w-10">ID</TableHead>
                     <TableHead>Nombre</TableHead>
                     <TableHead>Apellidos</TableHead>
@@ -34,7 +34,7 @@ export default function TableUsers({ data }: Props) {
             </TableHeader>
             <TableBody>
                 {data && data.map((user: any) => (
-                    <TableRow key={user.id}>
+                    <TableRow className="bg-[#ebeef3]" key={user.id}>
                         <TableCell className="font-medium w-10">{user.id.substring(0, 10)}</TableCell>
                         <TableCell>{user.name}</TableCell>
                         <TableCell>{user.lastName}</TableCell>

@@ -1,3 +1,4 @@
+import { RiAddCircleLine } from 'react-icons/ri';
 import FormCreateRol from '~/components/ui/admin/rol/FormCreateRol'
 
 import { createRol } from "~/models/createRol"
@@ -28,8 +29,9 @@ export const action = async ({ request }: ActionArgs) => {
 export default function CreateRol() {
     return (
         <div className="m-3 items-center justify-center h-screen w-full space-y-4">
-            <h1 className="mb-3 text-2xl text-[#3d3d3d] dark:text-white">
-                Crear Rol
+            <h1 className="flex flex-row items-end mb-3 text-2xl text-[#252525] dark:text-white">
+                <RiAddCircleLine className="text-[#5a6e8a] mr-1 w-8 h-8" />
+                Crear rol
             </h1>
             <FormCreateRol />
         </div>
