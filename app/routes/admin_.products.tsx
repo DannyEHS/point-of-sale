@@ -12,9 +12,6 @@ import { RiArchive2Line } from "react-icons/ri";
 import { RiAddLine } from "react-icons/ri";
 import { RiCornerDownLeftFill } from "react-icons/ri";
 
-
-
-
 export const loader = async () => {
     const categories = await prisma.category.findMany();
     const productsAndCategories = await prisma.product.findMany({
