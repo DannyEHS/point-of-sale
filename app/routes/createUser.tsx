@@ -1,8 +1,8 @@
-import FormCreateUser from '~/components/ui/admin/users/FormCreateUser'
+import FormCreateUser from '~/components/ui/admin/users/FormCreateUser';
 
-import prisma from "../../prisma/prisma"
-import { useLoaderData } from '@remix-run/react'
-import { createUser } from '~/models/users/createUser'
+import prisma from "../../prisma/prisma";
+import { useLoaderData } from '@remix-run/react';
+import { createUser } from '~/models/users/createUser';
 
 import { RiUserAddLine } from "react-icons/ri";
 
