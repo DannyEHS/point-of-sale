@@ -1,6 +1,6 @@
 import { productValidation } from "~/validations/products/productSchema";
 import prisma from "../../../prisma/prisma";
-import { BarCodeExist } from "~/use-cases/product/productExists";
+import { BarCodeExist } from "~/use-cases/product/barCodeProductExists";
 
 export const createProduct = async (data: {
   barCode: string;
