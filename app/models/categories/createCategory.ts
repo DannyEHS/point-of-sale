@@ -1,3 +1,4 @@
+import { categoryNameExist } from "~/use-cases/category/categoryNameExists";
 import prisma from "../../../prisma/prisma";
 import { categoryValidation } from "~/validations/categories/categorySchema";
 
@@ -16,6 +17,12 @@ export const createCategory = async (data: {
   try {
     console.log("Datos de entrada:", data);
     categoryValidation.parse(data);
+
+    const nameExist = await categoryNameExist(data.name);
+    if (nameExist) {
+      throw new Error("Ya existe una categoria con este nombre.");
+    }
+
     const newCategory = await prisma.category.create({
       data: {
         name: data.name,

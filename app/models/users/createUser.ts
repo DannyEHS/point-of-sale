@@ -1,6 +1,7 @@
 // ~/models/users/createUser.ts
 import { userValidation } from "~/validations/users/userSchema";
 import prisma from "../../../prisma/prisma";
+import { passwordUserExist } from "~/use-cases/user/passwordExists";
 
 export const createUser = async (data: {
   name: string;
@@ -12,6 +13,11 @@ export const createUser = async (data: {
   try {
     
     userValidation.parse(data);
+
+    const passwordExist = await passwordUserExist(data.name);
+    if (passwordExist) {
+      throw new Error("Ya existe un usuario con esta clave.");
+    }
 
     const newUser = await prisma.user.create({
       data: {
@@ -27,7 +33,8 @@ export const createUser = async (data: {
       },
     });
     return newUser;
-  } catch (error) {
-    throw new Error("Error al crear usuario.");
+  } catch (error: any) {
+    console.error("Error al crear usuario:", error);
+    throw new Error(error.message || "Error al crear usuario.");
   }
 };
