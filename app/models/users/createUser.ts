@@ -10,7 +10,9 @@ export const createUser = async (data: {
   rol: string;
 }) => {
   try {
+    
     userValidation.parse(data);
+
     const newUser = await prisma.user.create({
       data: {
         name: data.name,
