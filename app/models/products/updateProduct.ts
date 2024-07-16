@@ -8,6 +8,9 @@ export const updateProduct = async (data: {
   price?: string;
   cost?: string;
   stock?: string;
+  priceWeight: string;
+  costWeight: string;
+  stockWeight: string;
   description?: string;
   category?: string;
 }) => {
@@ -21,6 +24,9 @@ export const updateProduct = async (data: {
         price: data.price,
         cost: data.cost,
         stock: data.stock,
+        priceWeight: data.priceWeight,
+        costWeight: data.costWeight,
+        stockWeight: data.stockWeight,
         description: data.description,
         ...(data.category && {
           category: {
