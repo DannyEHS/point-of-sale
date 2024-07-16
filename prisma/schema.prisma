@@ -20,6 +20,9 @@ model Product {
   price             String
   cost              String
   stock             String
+  priceWeight       String
+  costWeight        String
+  stockWeight       String
   description       String
   id_category       String     
   category          Category @relation(fields: [id_category], references: [id])
