@@ -7,5 +7,5 @@ export const passwordUserExist = async (password: string) => {
     },
   });
 
-  return passwordUserExist !== null;
+  return existingPassword !== null;
 };
