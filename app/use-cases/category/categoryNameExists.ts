@@ -6,6 +6,6 @@ export const categoryNameExist = async (name: string) => {
       name: name,
     },
   });
-
-  return categoryNameExist !== null;
+  console.log(existingName)
+  return existingName !== null;
 };

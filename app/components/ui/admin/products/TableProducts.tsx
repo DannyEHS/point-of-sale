@@ -29,7 +29,7 @@ export default function TableProducts({ data }: Props) {
                     <TableHead>Categoria</TableHead>
                     <TableHead>Precio</TableHead>
                     <TableHead>Costo</TableHead>
-                    <TableHead>Stock</TableHead>
+                    <TableHead>Cantidad</TableHead>
                     <TableHead>Accion</TableHead>
                 </TableRow>
             </TableHeader>

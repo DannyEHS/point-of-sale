@@ -7,5 +7,5 @@ export const rolNameExist = async (name: string) => {
     },
   });
 
-  return rolNameExist !== null;
+  return existingName !== null;
 };

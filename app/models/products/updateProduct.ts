@@ -4,15 +4,13 @@ import prisma from "../../../prisma/prisma";
 export const updateProduct = async (data: {
   id: string;
   barCode?: string;
+  model?: string;
   name?: string;
   price?: string;
   cost?: string;
   stock?: string;
-  priceWeight: string;
-  costWeight: string;
-  stockWeight: string;
   description?: string;
-  category?: string;
+  category: string;
 }) => {
   try {
     updateProductValidation.parse(data);
@@ -20,13 +18,11 @@ export const updateProduct = async (data: {
       where: { id: data.id },
       data: {
         barCode: data.barCode,
+        model: data.model,
         name: data.name,
         price: data.price,
         cost: data.cost,
         stock: data.stock,
-        priceWeight: data.priceWeight,
-        costWeight: data.costWeight,
-        stockWeight: data.stockWeight,
         description: data.description,
         ...(data.category && {
           category: {

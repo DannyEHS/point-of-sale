@@ -4,14 +4,12 @@ import { BarCodeExist } from "~/use-cases/product/barCodeProductExists";
 
 export const createProduct = async (data: {
   barCode: string;
+  model?: string
   name: string;
   price: string;
   cost: string;
   stock: string;
-  priceWeight: string;
-  costWeight: string;
-  stockWeight: string;
-  description: string;
+  description?: string;
   category: string;
 }) => {
   try {
@@ -31,13 +29,11 @@ export const createProduct = async (data: {
           },
         },
         barCode: data.barCode,
+        model: data.model,
         name: data.name,
         price: data.price,
         cost: data.cost,
         stock: data.stock,
-        priceWeight: data.priceWeight,
-        costWeight: data.costWeight,
-        stockWeight: data.stockWeight,
         description: data.description,
       },
     });

@@ -19,6 +19,7 @@ export const loader = async () => {
 export const action = async ({request}: ActionArgs) => {
     const formData = await request.formData();
     const barCode = await formData.get("barCode");
+    const model = await formData.get("model")
     const name = await formData.get("name");
     const stock = await formData.get("stock");
     const price = await formData.get("price");
@@ -26,15 +27,16 @@ export const action = async ({request}: ActionArgs) => {
     const description = await formData.get("description");
     const category = await formData.get("category");
 
-    if(!barCode) throw new Error("Ingresa el codigo de barras del product.")
-    if(!name) throw new Error("Ingresa el nombre para el producto.")
-    if(!price) throw new Error("Ingresa el precio para el producto.")
-    if(!cost) throw new Error("Ingresa cuanto te costo el producto.")
-    if(!category) throw new Error("Ingresa a que categoria pertenece el producto.")
-    if(!description) throw new Error("Ingresa una descripcion para el producto.")
+    if(price < cost) {
+        throw new Error("El precio no puede ser menor a lo que te costo.")
+    } 
+    if (cost > price) {
+        throw new Error("El costo no puede ser mayor a como lo vas a vender.")
+    }
 
     const newProduct = await createProduct({
         barCode,
+        model,
         name,
         stock,
         price,

@@ -14,11 +14,6 @@ export const createUser = async (data: {
     
     userValidation.parse(data);
 
-    const passwordExist = await passwordUserExist(data.name);
-    if (passwordExist) {
-      throw new Error("Ya existe un usuario con esta clave.");
-    }
-
     const newUser = await prisma.user.create({
       data: {
         name: data.name,
