@@ -1,19 +1,32 @@
-import { CiHome } from "react-icons/ci";
-import { CiShoppingCart } from "react-icons/ci";
+import { FiHome } from "react-icons/fi";
+import { FiShoppingCart } from "react-icons/fi";
 import { RiAdminLine } from "react-icons/ri";
 import { MdOutlineInventory2 } from "react-icons/md";
+import { FaRegUser, } from "react-icons/fa";
+import { RiArchive2Line } from "react-icons/ri";
+import { RiDashboardHorizontalLine } from "react-icons/ri";
+import { RiShieldCheckLine } from "react-icons/ri";
+import { RiGitRepositoryLine } from "react-icons/ri";
+import { RiBarcodeBoxLine } from "react-icons/ri";
 
 const iconsMap = {
-    home: CiHome,
-    cart: CiShoppingCart,
+    home: FiHome,
+    cart: FiShoppingCart,
     admin: RiAdminLine,
-    inventory: MdOutlineInventory2
+    inventory: MdOutlineInventory2,
+    user: FaRegUser,
+    product: RiArchive2Line,
+    category: RiDashboardHorizontalLine,
+    rol: RiShieldCheckLine,
+    report: RiGitRepositoryLine,
+    code: RiBarcodeBoxLine,
+    
 }
 
 export type IconName = keyof typeof iconsMap
 
 interface IconProps {
-    value: IconName
+    value: IconName 
 }
 
 export function IconComponent( { value }: IconProps) {
