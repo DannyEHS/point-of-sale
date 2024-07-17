@@ -20,13 +20,12 @@ const iconsMap = {
     rol: RiShieldCheckLine,
     report: RiGitRepositoryLine,
     code: RiBarcodeBoxLine,
-    
 }
 
 export type IconName = keyof typeof iconsMap
 
 interface IconProps {
-    value: IconName 
+    value: IconName
 }
 
 export function IconComponent( { value }: IconProps) {
