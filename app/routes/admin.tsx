@@ -2,10 +2,7 @@ import type { MetaFunction } from "@remix-run/node";
 import CardTopic from "~/components/ui/admin/CardTopic"
 
 import { FaRegUser, } from "react-icons/fa";
-import { CiBoxes } from "react-icons/ci";
-import { MdOutlineCategory, MdOutlineSecurity } from "react-icons/md";
-import { FaArrowUpRightFromSquare, FaRegNewspaper } from "react-icons/fa6";
-import { LiaBarcodeSolid } from "react-icons/lia";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { RiFolderSharedLine } from "react-icons/ri";
 import { RiArchive2Line } from "react-icons/ri";
 import { RiDashboardHorizontalLine } from "react-icons/ri";
@@ -13,6 +10,9 @@ import { RiShieldCheckLine } from "react-icons/ri";
 import { RiGitRepositoryLine } from "react-icons/ri";
 import { RiBarcodeBoxLine } from "react-icons/ri";
 import { RiAdminLine } from "react-icons/ri";
+import { RiTruckLine } from "react-icons/ri";
+import { RiLuggageCartLine } from "react-icons/ri";
+
 
 
 import { Link } from "@remix-run/react";
@@ -81,7 +81,6 @@ export default function Index() {
             />
           </Link>
           <Link to="/admin/rol">
-
             <TooltipInfo
               element={
                 <CardTopic
@@ -94,6 +93,36 @@ export default function Index() {
                 />
               }
               text="Aqui puedes crear, editar, buscar y eliminar tus roles, ademas de otorgarles permisos sobre la aplicacion."
+            />
+          </Link>
+          <Link to="/admin">
+            <TooltipInfo
+              element={
+                <CardTopic
+                  textTitle="Proveedores"
+                  textDescription="Aqui das de alta tus proveedores."
+                  texContent="Manejo de proveedores"
+                  textFooter="Administrador de proveedores"
+                  iconContent={<RiTruckLine  className="text-[#5a6e8a] mr-3 w-10 h-10" />}
+                  iconFooter={<RiFolderSharedLine className="text-[#5a6e8a] mr-3 w-6 h-6" />}
+                />
+              }
+              text="Aqui puedes crear, editar, buscar y eliminar tus proveedores."
+            />
+          </Link>
+          <Link to="/admin">
+            <TooltipInfo
+              element={
+                <CardTopic
+                  textTitle="Recepción y Traspasos"
+                  textDescription="Aqui recibes la mercancia ded tus proveedores."
+                  texContent="Manejo de pedidos y traspasos"
+                  textFooter="Administrador de pedidos y traspasos"
+                  iconContent={<RiLuggageCartLine  className="text-[#5a6e8a] mr-3 w-10 h-10" />}
+                  iconFooter={<RiFolderSharedLine className="text-[#5a6e8a] mr-3 w-6 h-6" />}
+                />
+              }
+              text="Aqui puedes crear, editar, buscar y eliminar tus usuarios."
             />
           </Link>
           <Link to="/">
