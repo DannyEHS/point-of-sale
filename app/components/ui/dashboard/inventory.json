@@ -4,8 +4,8 @@
 
             {
                 "id": "ID",
-                "Name": "Product",
-                "Type": "Stock",
+                "Name": "Producto",
+                "Type": "Cantidad",
                 "Rows": [
                     {
                         "id": 1,
@@ -22,7 +22,7 @@
                     {
                         "id": 3,
                         "img": "https://github.com/shadcn.png",
-                        "Name": "Jacket",
+                        "Name": "Chaqueta",
                         "Type": "0"
                     }
                 ]

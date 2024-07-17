@@ -4,26 +4,26 @@
 
             {
                 "id": "ID",
-                "Name": "Product",
-                "Type": "Category",
+                "Name": "Producto",
+                "Type": "Categoria",
                 "Rows": [
                     {
                         "id": 1,
                         "img": "https://github.com/shadcn.png",
                         "Name": "T-shirt",
-                        "Type": "Clothes"
+                        "Type": "Ropa"
                     },
                     {
                         "id": 2,
                         "img": "https://github.com/shadcn.png",
                         "Name": "Tennis",
-                        "Type": "Shoes"
+                        "Type": "Zapatos"
                     },
                     {
                         "id": 3,
                         "img": "https://github.com/shadcn.png",
-                        "Name": "Jacket",
-                        "Type": "Clothes"
+                        "Name": "Chaqueta",
+                        "Type": "Ropa"
                     }
                 ]
             }

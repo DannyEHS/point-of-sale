@@ -32,13 +32,12 @@ export default function TableCard({ data }: Props) {
                     <TableBody>
                         {tableHeader.Rows.map((rows: any) => {
                             return (
-                                <TableRow>
+                                <TableRow key={rows.id}>
                                     <TableCell  className="hidden">{rows.id}</TableCell>
-                                    
-                                    <TableCell  className="flex justify-around items-center">
-                                        {rows.img && <img src={rows.img} className="h-8 rounded-md mr-5" alt={rows.Name} />}
+                                    {rows.img ? <TableCell  className="flex justify-around items-center">
+                                        <img src={rows.img} className="h-8 rounded-md mr-5" alt={rows.Name} />
                                         {rows.Name}
-                                    </TableCell>
+                                    </TableCell> : <TableCell>{rows.Name}</TableCell>}               
                                     <TableCell>{rows.Type}</TableCell>
                                 </TableRow>
                             )
