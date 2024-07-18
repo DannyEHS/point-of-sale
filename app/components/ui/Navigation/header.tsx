@@ -1,5 +1,4 @@
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
-import { RiArchiveLine } from "react-icons/ri";
 import { useLocation } from 'react-router-dom'
 import { IconComponent, IconName } from "../icon";
 
@@ -49,19 +48,6 @@ export default function Header(){
         '/admin/report': 'report',
         '/admin/code': 'code',
     }
-
-    const iconContent2 = [
-        {path: '/', icon: 'home'},
-        {path: '/pos', icon: 'cart'},
-        {path: '/inventory', icon: 'inventory'},
-        {path: '/admin', icon: 'admin'},
-        {path: '/admin/users', icon: 'user'},
-        {path: '/admin/products', icon: 'product'},
-        {path: '/admin/categories', icon: 'category'},
-        {path: '/admin/rol', icon: 'rol'},
-        {path: '/admin/report', icon: 'report'},
-        {path: '/admin/code', icon: 'code'},
-    ]
 
     const curretnIcon = iconContent[currentPath] || 'archive' as IconName;
 
