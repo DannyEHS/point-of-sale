@@ -71,8 +71,18 @@ export default function SideBar() {
                             </Link>
                         </li>
                         {route.sub && route.sub.map((subRoute) => (
-                            <li key={subRoute.path} className={`${isOpenMenu[index] ? 'block' : 'hidden'} ${isActive(subRoute.path) ? 'text-gray-900 bg-gray-100 dark:bg-gray-400 dark:text-gray-50 dark:hover:text-gray-50' : 'text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:bg-gray-400 dark:text-gray-50 dark:hover:text-gray-50'} flex items-center gap-2 rounded-lg px-3 py-2 w-full transition-all duration-300 ease-in-out ${isOpen ? 'pl-6' : 'justify-center'}`}>
-                                <Link to={subRoute.path}>
+                            <li key={subRoute.path}> 
+                                <Link to={subRoute.path}
+                                    className={`
+                                        ${isOpen ? 'pl-6' : 'justify-center'} 
+                                        ${isOpenMenu[index] ? 'block' : 'hidden'}
+                                        ${isActive(subRoute.path) ? 
+                                        ` text-gray-900 bg-gray-100 dark:bg-gray-400 dark:text-gray-50 dark:hover:text-gray-50  `  
+                                        : 
+                                        `text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:bg-gray-400 dark:text-gray-50 dark:hover:text-gray-50`}  
+                                        flex items-center  gap-2 rounded-lg px-3 py-2 w-full transition-all duration-300 ease-in-out`} 
+                                    >
+                                
                                     <IconComponent className="size-4" value={subRoute.icon} />
                                     <div className={`${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none hidden'} transition-all duration-300 ease-in-out`}>
                                         {subRoute.name}
