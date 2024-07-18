@@ -4,33 +4,33 @@
 
             {
                 "id": "ID",
-                "Name": "Name",
-                "Type": "Role",
+                "Name": "Nombre",
+                "Type": "Rol",
                 "Rows": [
                     {
                         "id": 1,
                         "Name": "Juan",
-                        "Type": "Manager"
+                        "Type": "Gerente"
                     },
                     {
                         "id": 2,
                         "Name": "Pedro",
-                        "Type": "Cashier"
+                        "Type": "Cajero"
                     },
                     {
                         "id": 3,
                         "Name": "Maria",
-                        "Type": "Inventory"
+                        "Type": "Inventario"
                     },
                     {
                         "id": 4,
                         "Name": "Fer",
-                        "Type": "Manager"
+                        "Type": "Gerente"
                     },
                     {
                         "id": 5,
                         "Name": "Daniel",
-                        "Type": "Admin"
+                        "Type": "Administrador"
                     }
                 ]
             }
