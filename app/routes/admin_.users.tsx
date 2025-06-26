@@ -9,9 +9,7 @@ import prisma from "prisma/prisma";
 import { deleteUser } from "~/models/users/deleteUser";
 
 import useFilterUsers from "~/hooks/users/useFilterUser";
-import { RiCornerDownLeftFill } from "react-icons/ri";
-import { RiAddLine } from "react-icons/ri";
-import { RiUser3Line } from "react-icons/ri";
+import { RiCornerDownLeftFill, RiAddLine, RiUser3Line } from "react-icons/ri";
 
 
 
@@ -52,6 +50,7 @@ export default function Users() {
 
     const { users } = useLoaderData<typeof loader>();
     const { searchTerm, setSearchTerm, filteredUser } = useFilterUsers(users)
+    console.log({ RiCornerDownLeftFill, RiAddLine, RiUser3Line });
 
     return (
         <div className="items-center justify-start h-screen w-full">
@@ -70,12 +69,12 @@ export default function Users() {
                     <Link to="/createUser">
                         <TooltipInfo
                             element={
-                                <Button className="bg-[#3f4d65] hover:bg-[#5a6e8a]">
-                                    <RiAddLine className="w-5 h-5 mr-1"/>
+                                <Button className="flex flex-row bg-[#5a6e8a] hover:bg-[#4d5f7c]">
+                                    <RiAddLine className="w-5 h-5 mr-1" />
                                     Crear usuario
                                 </Button>
                             }
-                            text="Este boton te llevara al apartado donde podras crear a tus usuarios"
+                            text="Este boton te llevara de regreso al menu anterior en administracion"
                         />
                     </Link>
                     <Link to="/admin">

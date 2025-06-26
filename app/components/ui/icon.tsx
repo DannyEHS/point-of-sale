@@ -20,6 +20,7 @@ const iconsMap = {
     rol: RiShieldCheckLine,
     report: RiGitRepositoryLine,
     code: RiBarcodeBoxLine,
+    archive: RiArchive2Line,
 }
 
 export type IconName = keyof typeof iconsMap

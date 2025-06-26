@@ -5,10 +5,9 @@ import SelectItems from "~/components/ui/admin/SelectItems"
 import { Label } from "~/components/ui/label"
 
 import { IoMdHelpCircleOutline } from "react-icons/io";
-import TooltipInfo from "../../general/TooltipInfo";
+import TooltipInfo from "~/components/ui/general/TooltipInfo";
 
-import { RiAddLine } from "react-icons/ri";
-import { RiCornerDownLeftFill } from "react-icons/ri";
+import { RiAddLine, RiCornerDownLeftFill } from "react-icons/ri";
 
 
 type Props = {
@@ -18,7 +17,16 @@ type Props = {
     }[];
 }
 
-export default function FromCreateRol({ rolData }: Props) {
+export default function FormCreateUser({ rolData }: Props) {
+    // Verifica los imports
+    console.log("IoMdHelpCircleOutline:", IoMdHelpCircleOutline);
+    console.log("RiAddLine:", RiAddLine);
+    console.log("RiCornerDownLeftFill:", RiCornerDownLeftFill);
+    console.log("TooltipInfo:", TooltipInfo);
+    console.log("Button:", Button);
+    console.log("Input:", Input);
+    console.log("Label:", Label);
+    console.log("SelectItems:", SelectItems);
     return (
         <>
             <Form method="post" className="flex flex-col items-center bg-[#fafbfb] dark:bg-[#252525] w-9/12">
