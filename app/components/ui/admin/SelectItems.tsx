@@ -6,6 +6,12 @@ import {
     SelectValue,
 } from "~/components/ui/select";
 
+console.log("Select:", Select);
+console.log("SelectContent:", SelectContent);
+console.log("SelectItem:", SelectItem);
+console.log("SelectTrigger:", SelectTrigger);
+console.log("SelectValue:", SelectValue);
+
 type Props = {
     data?: {
         id: string;

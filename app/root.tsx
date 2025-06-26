@@ -16,7 +16,7 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export default function App() {
   return (
     <html lang="en">
       <head>
@@ -26,24 +26,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <div className="flex flex-row min-h-screen ">
+          <Sidebar />
+          <div className="flex-1 bg-[#f6f6f6] dark:bg-[#252525]">
+            <Header />
+            <Outlet />
+          </div>
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
-}
-
-export default function App() {
-  return(
-    <div className="flex flex-row min-h-screen ">
-    <Sidebar/>
-    
-    <div className="flex-1 bg-[#f6f6f6] dark:bg-[#252525]">
-      <Header />
-      <Outlet />
-    </div>
-  </div>
-  )
-  
 }

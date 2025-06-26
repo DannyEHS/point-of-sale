@@ -3,28 +3,24 @@ import {
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-} from "~/components/ui/tooltip"
+} from "~/components/ui/tooltip";
 
 type Props = {
-    element: React.ReactElement;
+    element?: React.ReactElement;
     text?: string;
-}
+};
 
-export default function TooltipInfo({ element, text } : Props) {
+export default function TooltipInfo({ element, text }: Props) {
     return (
         <TooltipProvider>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <p>
-                        {element}
-                    </p>
+                    {element}
                 </TooltipTrigger>
                 <TooltipContent>
-                    <p>
-                        {text}
-                    </p>
+                    {text && <p>{text}</p>}
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
-    )
+    );
 }
