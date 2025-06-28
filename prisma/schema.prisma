@@ -24,6 +24,7 @@ model Product {
   description       String?
   id_category       String     
   category          Category @relation(fields: [id_category], references: [id])
+  saleItems         SaleItem[]
 }
 
 model Category {
@@ -49,4 +50,24 @@ model User {
   password    String
   rol         Rol      @relation(fields: [rolId], references: [id])
   rolId       String
+}
+
+model Sale {
+  id            String      @id @default(cuid())
+  date          DateTime    @default(now())
+  total         Float
+  paymentMethod String
+  clientName    String?
+  clientPhone   String?
+  saleItems     SaleItem[]
+}
+
+model SaleItem {
+  id         String   @id @default(cuid())
+  sale       Sale     @relation(fields: [saleId], references: [id])
+  saleId     String
+  product    Product  @relation(fields: [productId], references: [id])
+  productId  String
+  quantity   Int
+  unitPrice  Float
 }
